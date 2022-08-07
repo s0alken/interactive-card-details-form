@@ -79,7 +79,7 @@ body {
 }
 
 .card {
-  height: 25.1rem;
+  min-height: 25.1rem;
   position: relative;
   filter: drop-shadow(0 3.9rem 6rem hsla(0deg, 0%, 0%, 0.142));
 }
