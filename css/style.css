@@ -172,6 +172,7 @@ body {
   color: hsl(0deg, 0%, 100%);
 }
 .card__info-number {
+  font-weight: 500;
   letter-spacing: 0.22rem;
   margin-bottom: 1.7rem;
 }
