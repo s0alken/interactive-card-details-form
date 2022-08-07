@@ -204,7 +204,11 @@ body {
 
         &-number {
             font-weight: 500;
+            font-size: 1.8rem;
+            line-height: 2.3rem;
+
             letter-spacing: .22rem;
+
             margin-bottom: 1.7rem;
 
             @media only screen and (min-width: $breakpoint) {
