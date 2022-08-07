@@ -13,6 +13,10 @@ $very-dark-violet: hsl(278, 68%, 11%);
 //Fonts
 $font-primary: 'Space Grotesk', sans-serif;
 
+//Breakpoint
+$breakpoint: 56.25em;
+$breakpoint: 1050px;
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 
 *,
@@ -34,9 +38,368 @@ body {
     font-size: 1.8rem;
     line-height: 2.3rem;
 
-    text-align: center;
-
-    color:$dark-grayish-violet;
+    color: $dark-grayish-violet;
 
     min-height: 100vh;
+}
+
+.main {
+    position: relative;
+}
+
+.background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex-direction: row;
+    }
+
+    &-top {
+        height: 24rem;
+        background: url(../images/bg-main-mobile.png) no-repeat center;
+        background-size: cover;
+
+        @media only screen and (min-width: $breakpoint) {
+            height: 100vh;
+            width: 33.54%;
+            background: url(../images/bg-main-desktop.png) no-repeat center;
+            background-size: cover;
+        }
+    }
+
+    &-bottom {
+        flex: 1;
+    }
+}
+
+.wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    flex: 0 1 34.3rem;
+    row-gap: 4.8rem;
+
+    display: flex;
+    flex-direction: column;
+
+    margin: 3.2rem 2.4rem;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 1 110.9rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.card {
+    height: 25.1rem;
+    position: relative;
+
+    filter: drop-shadow(0 3.9rem 6rem hsla(0, 0%, 0%, 0.142));
+
+    @media only screen and (min-width: $breakpoint) {
+        width: 54.1rem;
+        height: 52.7rem;
+    }
+
+    &__img-container {
+        width: 28.6rem;
+        position: absolute;
+
+        @media only screen and (min-width: $breakpoint) {
+            width: 44.7rem;
+        }
+
+        &--back {
+            top: 0;
+            right: 0;
+
+            @media only screen and (min-width: $breakpoint) {
+                top: auto;
+                bottom: 0;
+            }
+        }
+
+        &--front {
+            bottom: 0;
+            left: 0;
+
+            @media only screen and (min-width: $breakpoint) {
+                bottom: auto;
+                top: 0;
+            }
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &__front-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 1.76rem 2.089rem 1.96rem 1.9rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            padding: 2.8rem 3.186rem 2.65rem 3.2rem;
+        }
+    }
+
+    &__back-content {
+        position: absolute;
+        top: 45.5%;
+        right: 13%;
+
+        background-color: transparent;
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        font-size: .9rem;
+        line-height: 1.1rem;
+        letter-spacing: .128571rem;
+        text-transform: uppercase;
+
+        color: $white;
+
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            letter-spacing: .2rem;
+        }
+    }
+
+    &__logo {
+        width: 5.4rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            width: 8.4rem;
+        }
+    }
+
+    &__info {
+        margin-top: auto;
+        color: $white;
+
+        &-number {
+            letter-spacing: .22rem;
+            margin-bottom: 1.7rem;
+
+            @media only screen and (min-width: $breakpoint) {
+                font-size: 2.8rem;
+                line-height: 3.6rem;
+
+                letter-spacing: .342222rem;
+                margin-bottom: 2.4rem;
+            }
+        }
+
+        &-holder {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            font-size: .9rem;
+            line-height: 1.1rem;
+            letter-spacing: .1128571rem;
+            text-transform: uppercase;
+
+            @media only screen and (min-width: $breakpoint) {
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+
+                letter-spacing: .2rem;
+            }
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 0 38.1rem;
+        gap: 2.6rem;
+        margin-right: 6rem;
+    }
+
+    &__input-group {
+        display: flex;
+        flex-direction: column;
+
+        &--split {
+            display: flex;
+            flex-direction: row;
+            gap: 1.1rem;
+
+            @media only screen and (min-width: $breakpoint) {
+                gap: 2rem;
+            }
+        }
+
+        &--date-inputs {
+            display: flex;
+            flex-direction: row;
+            gap: .8rem;
+
+            @media only screen and (min-width: $breakpoint) {
+                gap: 1rem;
+            }
+        }
+
+        &--date-group {
+            flex: 1;
+        }
+
+        &--cvc {
+            width: 16.4rem;
+
+            @media only screen and (min-width: $breakpoint) {
+                width: 19.1rem;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        letter-spacing: .2rem;
+        text-transform: uppercase;
+
+        color: $very-dark-violet;
+        margin-bottom: .9rem;
+    }
+
+    &__input {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+
+        width: 100%;
+        height: 4.5rem;
+        font-family: inherit;
+        background-color: $white;
+
+        border: 1px solid #DFDEE0;
+        border-radius: .8rem;
+        padding: 1.1rem 1.6rem;
+
+        &::placeholder {
+            color: $very-dark-violet;
+
+            mix-blend-mode: normal;
+            opacity: 0.25;
+        }
+
+        &:focus {
+            outline: none;
+
+            /* border-width: 2px;
+            border-style: solid;
+            border-image: linear-gradient(to bottom, #6348FE, #610595) 1;
+            border-radius: .8rem; */
+
+            border: 1px solid hsl(249, 99%, 64%);
+        }
+
+        &.error {
+            border: 1px solid $red;
+        }
+    }
+
+    &__error {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+        margin-top: .8rem;
+        color: $red;
+        display: none;
+
+        &.visible {
+            display: block;
+        }
+    }
+
+}
+
+.button {
+    align-self: stretch;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+
+    border: none;
+    padding: 1.5rem;
+    border-radius: .8rem;
+    background-color: $very-dark-violet;
+    color: $white;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--form {
+        margin-top: .8rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            margin-top: 1.4rem;
+        }
+    }
+}
+
+.success {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (min-width: $breakpoint) {
+        flex: 0 0 38.1rem;
+        margin-right: 6rem;
+    }
+
+    &__icon {
+        margin-bottom: 3.5rem;
+    }
+
+    &__thanks {
+        font-weight: 500;
+        font-size: 2.8rem;
+        line-height: 3.6rem;
+
+        letter-spacing: .342222rem;
+
+        text-transform: uppercase;
+
+        color: $very-dark-violet;
+
+        margin-bottom: 1.6rem;
+    }
+
+    &__text {
+        margin-bottom: 4.8rem;
+    }
 }
