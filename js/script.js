@@ -38,7 +38,7 @@ const formatCreditCardNumber = str => {
     return str.match(/.{1,4}/g).join(" ");
 }
 
-number.addEventListener("keypress", event => {
+number.addEventListener("textInput", event => {
 
     event.preventDefault();
 
@@ -46,7 +46,7 @@ number.addEventListener("keypress", event => {
 
     if (value.length === 16) return;
 
-    const newValue = number.value.split(" ").join("") + event.key;
+    const newValue = number.value.split(" ").join("") + event.data;
 
     number.value = formatCreditCardNumber(newValue);
 
