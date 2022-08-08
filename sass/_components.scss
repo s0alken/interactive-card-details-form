@@ -1,0 +1,143 @@
+.card {
+    width: 28.6rem;
+    position: absolute;
+    color: $white;
+
+    @media only screen and (min-width: $breakpoint) {
+        width: 44.7rem;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    &--back {
+        top: 0;
+        right: 0;
+
+        @media only screen and (min-width: $breakpoint) {
+            top: auto;
+            bottom: 0;
+        }
+    }
+
+    &--front {
+        bottom: 0;
+        left: 0;
+
+        @media only screen and (min-width: $breakpoint) {
+            bottom: auto;
+            top: 0;
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 1.76rem 2.089rem 1.96rem 1.9rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            padding: 2.8rem 3.186rem 2.65rem 3.2rem;
+        }
+    }
+
+    &__logo {
+        width: 5.4rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            width: 8.4rem;
+        }
+    }
+
+    &__info {
+        margin-top: auto;
+    }
+
+    &__number {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.3rem;
+
+        letter-spacing: .22rem;
+
+        margin-bottom: 1.7rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 2.8rem;
+            line-height: 3.6rem;
+
+            letter-spacing: .342222rem;
+            margin-bottom: 2.4rem;
+        }
+    }
+
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-size: .9rem;
+        line-height: 1.1rem;
+        letter-spacing: .1128571rem;
+        text-transform: uppercase;
+
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+
+            letter-spacing: .2rem;
+        }
+    }
+
+    &__cvc {
+        position: absolute;
+        top: 45.5%;
+        right: 13%;
+
+        font-size: .9rem;
+        line-height: 1.1rem;
+        letter-spacing: .128571rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            letter-spacing: .2rem;
+        }
+    }
+}
+
+.button {
+    align-self: stretch;
+
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+
+    border: none;
+    padding: 1.5rem;
+    border-radius: .8rem;
+    background-color: $very-dark-violet;
+    color: $white;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &--form {
+        margin-top: .8rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            margin-top: 1.4rem;
+        }
+    }
+}
