@@ -15,11 +15,11 @@ const button_continue = document.querySelector(".button-continue");
 const isEmptyErrorMessage = "Can't be blank";
 const hasCharactersErrorMessage = "Wrong format, numbers only";
 
-const card_number = document.querySelector(".card__info-number");
-const card_name = document.querySelector(".card__info-name");
-const card_month = document.querySelector(".card__info-month");
-const card_year = document.querySelector(".card__info-year");
-const card_cvc = document.querySelector(".card__back-content");
+const card_number = document.querySelector(".card__number");
+const card_name = document.querySelector(".card__name");
+const card_month = document.querySelector(".card__month");
+const card_year = document.querySelector(".card__year");
+const card_cvc = document.querySelector(".card__cvc");
 
 name.addEventListener("keyup", () => {
 
@@ -38,7 +38,7 @@ const formatCreditCardNumber = str => {
     return str.match(/.{1,4}/g).join(" ");
 }
 
-number.addEventListener("textInput", event => {
+number.addEventListener("keypress", event => {
 
     event.preventDefault();
 
@@ -46,7 +46,7 @@ number.addEventListener("textInput", event => {
 
     if (value.length === 16) return;
 
-    const newValue = number.value.split(" ").join("") + event.data;
+    const newValue = number.value.split(" ").join("") + event.key;
 
     number.value = formatCreditCardNumber(newValue);
 

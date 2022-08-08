@@ -25,23 +25,23 @@
     </div>
     <div class="wrapper">
       <div class="container">
-        <div class="card">
-          <div class="card__img-container card__img-container--back">
-            <img src="images/bg-card-back.png" alt="" class="card__img">
-            <div class="card__back-content">000</div>
+        <div class="cards-container">
+          <div class="card card--back">
+            <img src="images/bg-card-back.png" alt="Card back" class="card__img">
+            <div class="card__cvc">000</div>
           </div>
-          <div class="card__img-container card__img-container--front">
-            <img src="images/bg-card-front.png" alt="" class="card__img">
-            <div class="card__front-content">
+          <div class="card card--front">
+            <img src="images/bg-card-front.png" alt="Card front" class="card__img">
+            <div class="card__overlay">
               <div class="card__logo-container">
-                <img src="images/card-logo.svg" alt="" class="card__logo">
+                <img src="images/card-logo.svg" alt="Card logo" class="card__logo">
               </div>
               <div class="card__info">
-                <h1 class="card__info-number">0000 0000 0000 0000</h1>
-                <div class="card__info-holder">
-                  <div class="card__info-name">Jane Appleseed</div>
-                  <div class="card__info-date">
-                    <span class="card__info-month">00</span>/<span class="card__info-year">00</span>
+                <h1 class="card__number">0000 0000 0000 0000</h1>
+                <div class="card__holder">
+                  <div class="card__name">Jane Appleseed</div>
+                  <div class="card__date">
+                    <span class="card__month">00</span>/<span class="card__year">00</span>
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@
           </div>
         </div>
 
-        <div class="form-container">
+        <div class="main-container">
           <form action="#" class="form">
             <div class="form__input-group">
               <label for="name" class="form__label">Cardholder Name</label>
@@ -87,15 +87,16 @@
             </div>
             <button class="button button--form" type="submit">Confirm</button>
           </form>
-        </div>
 
-        <div class="success">
-          <div class="success__icon">
-            <img src="images/icon-complete.svg" alt="">
+          <div class="success">
+            <div class="success__icon">
+              <img src="images/icon-complete.svg" alt="">
+            </div>
+            <h1 class="success__heading">Thank you!</h1>
+            <p class="success__message">We’ve added your card details</p>
+            <button class="button button-continue">Continue</button>
           </div>
-          <h1 class="success__thanks">Thank you!</h1>
-          <p class="success__text">We’ve added your card details</p>
-          <button class="button button-continue">Continue</button>
+
         </div>
 
       </div>

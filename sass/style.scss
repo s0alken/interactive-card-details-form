@@ -102,7 +102,7 @@ body {
     }
 }
 
-.card {
+.cards-container {
     min-height: 25.1rem;
     position: relative;
 
@@ -113,33 +113,15 @@ body {
         height: 52.7rem;
     }
 
-    &__img-container {
-        width: 28.6rem;
-        position: absolute;
+}
 
-        @media only screen and (min-width: $breakpoint) {
-            width: 44.7rem;
-        }
+.card {
+    width: 28.6rem;
+    position: absolute;
+    color: $white;
 
-        &--back {
-            top: 0;
-            right: 0;
-
-            @media only screen and (min-width: $breakpoint) {
-                top: auto;
-                bottom: 0;
-            }
-        }
-
-        &--front {
-            bottom: 0;
-            left: 0;
-
-            @media only screen and (min-width: $breakpoint) {
-                bottom: auto;
-                top: 0;
-            }
-        }
+    @media only screen and (min-width: $breakpoint) {
+        width: 44.7rem;
     }
 
     &__img {
@@ -148,7 +130,27 @@ body {
         height: auto;
     }
 
-    &__front-content {
+    &--back {
+        top: 0;
+        right: 0;
+
+        @media only screen and (min-width: $breakpoint) {
+            top: auto;
+            bottom: 0;
+        }
+    }
+
+    &--front {
+        bottom: 0;
+        left: 0;
+
+        @media only screen and (min-width: $breakpoint) {
+            bottom: auto;
+            top: 0;
+        }
+    }
+
+    &__overlay {
         position: absolute;
         top: 0;
         left: 0;
@@ -165,31 +167,6 @@ body {
         }
     }
 
-    &__back-content {
-        position: absolute;
-        top: 45.5%;
-        right: 13%;
-
-        background-color: transparent;
-
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        font-size: .9rem;
-        line-height: 1.1rem;
-        letter-spacing: .128571rem;
-        text-transform: uppercase;
-
-        color: $white;
-
-        @media only screen and (min-width: $breakpoint) {
-            font-size: 1.4rem;
-            line-height: 1.8rem;
-            letter-spacing: .2rem;
-        }
-    }
-
     &__logo {
         width: 5.4rem;
 
@@ -200,47 +177,62 @@ body {
 
     &__info {
         margin-top: auto;
-        color: $white;
+    }
 
-        &-number {
-            font-weight: 500;
-            font-size: 1.8rem;
-            line-height: 2.3rem;
+    &__number {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.3rem;
 
-            letter-spacing: .22rem;
+        letter-spacing: .22rem;
 
-            margin-bottom: 1.7rem;
+        margin-bottom: 1.7rem;
 
-            @media only screen and (min-width: $breakpoint) {
-                font-size: 2.8rem;
-                line-height: 3.6rem;
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 2.8rem;
+            line-height: 3.6rem;
 
-                letter-spacing: .342222rem;
-                margin-bottom: 2.4rem;
-            }
+            letter-spacing: .342222rem;
+            margin-bottom: 2.4rem;
         }
+    }
 
-        &-holder {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    &__holder {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
 
-            font-size: .9rem;
-            line-height: 1.1rem;
-            letter-spacing: .1128571rem;
-            text-transform: uppercase;
+        font-size: .9rem;
+        line-height: 1.1rem;
+        letter-spacing: .1128571rem;
+        text-transform: uppercase;
 
-            @media only screen and (min-width: $breakpoint) {
-                font-size: 1.4rem;
-                line-height: 1.8rem;
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
 
-                letter-spacing: .2rem;
-            }
+            letter-spacing: .2rem;
+        }
+    }
+
+    &__cvc {
+        position: absolute;
+        top: 45.5%;
+        right: 13%;
+
+        font-size: .9rem;
+        line-height: 1.1rem;
+        letter-spacing: .128571rem;
+
+        @media only screen and (min-width: $breakpoint) {
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            letter-spacing: .2rem;
         }
     }
 }
 
-.form-container {
+.main-container {
     display: flex;
     justify-content: center;
 
@@ -251,7 +243,7 @@ body {
 }
 
 .form {
-    flex: 1 1 32.7rem;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -383,20 +375,24 @@ body {
 }
 
 .success {
+    flex: 1;
+
     display: none;
     flex-direction: column;
     align-items: center;
 
+    margin-inline: .8rem;
+
     @media only screen and (min-width: $breakpoint) {
         flex: 0 0 38.1rem;
-        margin-right: 6rem;
+        margin-inline: 0;
     }
 
     &__icon {
         margin-bottom: 3.5rem;
     }
 
-    &__thanks {
+    &__heading {
         font-weight: 500;
         font-size: 2.8rem;
         line-height: 3.6rem;
@@ -410,7 +406,7 @@ body {
         margin-bottom: 1.6rem;
     }
 
-    &__text {
+    &__message {
         margin-bottom: 4.8rem;
     }
 }

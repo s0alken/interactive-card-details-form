@@ -78,44 +78,26 @@ body {
   }
 }
 
-.card {
+.cards-container {
   min-height: 25.1rem;
   position: relative;
   filter: drop-shadow(0 3.9rem 6rem hsla(0deg, 0%, 0%, 0.142));
 }
 @media only screen and (min-width: 66.25em) {
-  .card {
+  .cards-container {
     width: 54.1rem;
     height: 52.7rem;
   }
 }
-.card__img-container {
+
+.card {
   width: 28.6rem;
   position: absolute;
+  color: hsl(0deg, 0%, 100%);
 }
 @media only screen and (min-width: 66.25em) {
-  .card__img-container {
+  .card {
     width: 44.7rem;
-  }
-}
-.card__img-container--back {
-  top: 0;
-  right: 0;
-}
-@media only screen and (min-width: 66.25em) {
-  .card__img-container--back {
-    top: auto;
-    bottom: 0;
-  }
-}
-.card__img-container--front {
-  bottom: 0;
-  left: 0;
-}
-@media only screen and (min-width: 66.25em) {
-  .card__img-container--front {
-    bottom: auto;
-    top: 0;
   }
 }
 .card__img {
@@ -123,7 +105,27 @@ body {
   width: 100%;
   height: auto;
 }
-.card__front-content {
+.card--back {
+  top: 0;
+  right: 0;
+}
+@media only screen and (min-width: 66.25em) {
+  .card--back {
+    top: auto;
+    bottom: 0;
+  }
+}
+.card--front {
+  bottom: 0;
+  left: 0;
+}
+@media only screen and (min-width: 66.25em) {
+  .card--front {
+    bottom: auto;
+    top: 0;
+  }
+}
+.card__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -134,29 +136,8 @@ body {
   padding: 1.76rem 2.089rem 1.96rem 1.9rem;
 }
 @media only screen and (min-width: 66.25em) {
-  .card__front-content {
+  .card__overlay {
     padding: 2.8rem 3.186rem 2.65rem 3.2rem;
-  }
-}
-.card__back-content {
-  position: absolute;
-  top: 45.5%;
-  right: 13%;
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  font-size: 0.9rem;
-  line-height: 1.1rem;
-  letter-spacing: 0.128571rem;
-  text-transform: uppercase;
-  color: hsl(0deg, 0%, 100%);
-}
-@media only screen and (min-width: 66.25em) {
-  .card__back-content {
-    font-size: 1.4rem;
-    line-height: 1.8rem;
-    letter-spacing: 0.2rem;
   }
 }
 .card__logo {
@@ -169,9 +150,8 @@ body {
 }
 .card__info {
   margin-top: auto;
-  color: hsl(0deg, 0%, 100%);
 }
-.card__info-number {
+.card__number {
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2.3rem;
@@ -179,14 +159,14 @@ body {
   margin-bottom: 1.7rem;
 }
 @media only screen and (min-width: 66.25em) {
-  .card__info-number {
+  .card__number {
     font-size: 2.8rem;
     line-height: 3.6rem;
     letter-spacing: 0.342222rem;
     margin-bottom: 2.4rem;
   }
 }
-.card__info-holder {
+.card__holder {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -196,26 +176,41 @@ body {
   text-transform: uppercase;
 }
 @media only screen and (min-width: 66.25em) {
-  .card__info-holder {
+  .card__holder {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    letter-spacing: 0.2rem;
+  }
+}
+.card__cvc {
+  position: absolute;
+  top: 45.5%;
+  right: 13%;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  letter-spacing: 0.128571rem;
+}
+@media only screen and (min-width: 66.25em) {
+  .card__cvc {
     font-size: 1.4rem;
     line-height: 1.8rem;
     letter-spacing: 0.2rem;
   }
 }
 
-.form-container {
+.main-container {
   display: flex;
   justify-content: center;
 }
 @media only screen and (min-width: 66.25em) {
-  .form-container {
+  .main-container {
     flex: 0 0 44.1rem;
     justify-content: flex-start;
   }
 }
 
 .form {
-  flex: 1 1 32.7rem;
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -331,20 +326,22 @@ body {
 }
 
 .success {
+  flex: 1;
   display: none;
   flex-direction: column;
   align-items: center;
+  margin-inline: 0.8rem;
 }
 @media only screen and (min-width: 66.25em) {
   .success {
     flex: 0 0 38.1rem;
-    margin-right: 6rem;
+    margin-inline: 0;
   }
 }
 .success__icon {
   margin-bottom: 3.5rem;
 }
-.success__thanks {
+.success__heading {
   font-weight: 500;
   font-size: 2.8rem;
   line-height: 3.6rem;
@@ -353,7 +350,7 @@ body {
   color: hsl(278deg, 68%, 11%);
   margin-bottom: 1.6rem;
 }
-.success__text {
+.success__message {
   margin-bottom: 4.8rem;
 }
 
